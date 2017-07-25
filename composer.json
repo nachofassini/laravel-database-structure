@@ -1,0 +1,13 @@
+{
+    "name": "nachofassini/laravel-database-structure",
+    "description": "Package that generates a php file with the tables and fields of the database after running all the migrations",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "NachoFassini\\": "src/"
+        }
+    }
+}
