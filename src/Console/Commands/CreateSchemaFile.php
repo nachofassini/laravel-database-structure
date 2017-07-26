@@ -119,7 +119,7 @@ class CreateSchemaFile extends Command
     protected function populateStub($tables, $stub)
     {
         $tables = $this->transformToString($tables);
-        return str_replace('$tables', $tables, $stub);
+        return str_replace('$tables;', $tables, $stub);
     }
 
     /**
@@ -162,7 +162,7 @@ class CreateSchemaFile extends Command
      */
     public function getStubPath()
     {
-        return __DIR__ . '../stubs';
+        return __DIR__ . '/../stubs';
     }
 
     protected function getOptions()

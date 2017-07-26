@@ -4,4 +4,4 @@
  * List of tables and fields
  */
 
-$tables = [];
+$tables;
