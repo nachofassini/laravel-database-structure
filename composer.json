@@ -3,11 +3,37 @@
     "description": "Package that generates a php file with the tables and fields of the database after running all the migrations",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "stable",
-    "require": {},
+    "authors": [
+        {
+            "name": "Ignacio Fassini",
+            "email": "nachofassini@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "illuminate/contracts": "~5.3|~5.4",
+        "illuminate/support": "~5.3|~5.4",
+        "thedevsaddam/laravel-schema": "^2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "~5.7"
+    },
     "autoload": {
         "psr-4": {
-            "NachoFassini\\": "src/"
+            "NachoFassini\\LaravelDatabaseStructure\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NachoFassini\\LaravelDatabaseStructure\\ServiceProvider"
+            ]
         }
     }
 }
