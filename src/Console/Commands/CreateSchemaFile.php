@@ -11,6 +11,7 @@ use Symfony\Component\Console\Input\InputOption;
 class CreateSchemaFile extends Command
 {
     use Helper;
+
     /**
      * The name and signature of the console command.
      *

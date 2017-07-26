@@ -15,18 +15,9 @@
         "illuminate/support": "~5.3|~5.4",
         "thedevsaddam/laravel-schema": "^2.0"
     },
-    "require-dev": {
-        "mockery/mockery": "dev-master",
-        "phpunit/phpunit": "~5.7"
-    },
     "autoload": {
         "psr-4": {
             "NachoFassini\\LaravelDatabaseStructure\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
         }
     },
     "extra": {
