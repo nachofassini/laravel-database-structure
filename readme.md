@@ -68,4 +68,4 @@ I think this can be much more useful, any collaboration is appreciated.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
