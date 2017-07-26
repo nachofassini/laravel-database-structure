@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * List of tables and fields
+ */
+
+$tables = [];
