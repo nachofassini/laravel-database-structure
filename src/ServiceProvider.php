@@ -2,10 +2,11 @@
 
 namespace NachoFassini\LaravelDatabaseStructure;
 
-use App\Listeners\MigrationListener;
+use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use NachoFassini\LaravelDatabaseStructure\Console\Commands\CreateSchemaFile;
+use NachoFassini\LaravelDatabaseStructure\Listeners\MigrationListener;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -20,11 +21,9 @@ class ServiceProvider extends BaseServiceProvider
             ]);
         }
 
-        //dd('asdasd');
-
-        Event::listen('event.CommandFinished', function ($event) {
-            new MigrationListener($event);
-        });
+        if (env('AUTOMATIC_SCHEMA_FILE', false)) {
+            Event::listen(CommandFinished::class, MigrationListener::class);
+        }
     }
 
     /**

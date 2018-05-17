@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace NachoFassini\LaravelDatabaseStructure\Listeners;
 
 use Illuminate\Console\Events\CommandFinished;
 use Illuminate\Queue\InteractsWithQueue;
@@ -11,27 +11,15 @@ class MigrationListener implements ShouldQueue
 {
     use InteractsWithQueue;
 
-    public $event;
-
     /**
-     * Create the event listener.
+     * Handle the event.
      *
      * @param CommandFinished $event
      * @return void
      */
-    public function __construct(CommandFinished $event)
+    public function handle(CommandFinished $event): void
     {
-        $this->event = $event;
-    }
-
-    /**
-     * Handle the event.
-     *
-     * @return void
-     */
-    public function handle(): void
-    {
-        if ($this->isMigrating($this->event->command)) {
+        if ($this->isMigrating($event->command)) {
             $this->generateSchemaFile();
         }
     }
