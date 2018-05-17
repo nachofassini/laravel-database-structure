@@ -7,7 +7,7 @@ You can pull in the package via composer:
     composer require nachofassini/laravel-database-structure
 ```
 
-Next up, the service provider must be registered:
+For laravel < 5.6: the service provider must be registered:
 
 ```php
     // config/app.php
@@ -49,16 +49,7 @@ There are no conventions about this, but I think this file should be ignored.
 
 ## Automatic update on migrations
 
-If you want the file to be updated every time you change the database through any migrate command, just add the following:
-
-```php
-    // app/Console/Kernel
-    use NachoFassini\LaravelDatabaseStructure\LaravelDatabaseStructureTrait;
-    
-    class Kernel extends ConsoleKernel
-    {
-        use LaravelDatabaseStructureTrait;
-```
+If you want the file to be updated every time you change the database through any migrate command, just set `AUTOMATIC_SCHEMA_FILE=true` in your .env file.    
 
 This will make that after executing any kind of migration command, the schema file gets up to date with the final database structure.
 
