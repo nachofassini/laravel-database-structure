@@ -2,6 +2,8 @@
 
 namespace NachoFassini\LaravelDatabaseStructure;
 
+use App\Listeners\MigrationListener;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use NachoFassini\LaravelDatabaseStructure\Console\Commands\CreateSchemaFile;
 
@@ -17,6 +19,12 @@ class ServiceProvider extends BaseServiceProvider
                 CreateSchemaFile::class,
             ]);
         }
+
+        //dd('asdasd');
+
+        Event::listen('event.CommandFinished', function ($event) {
+            new MigrationListener($event);
+        });
     }
 
     /**

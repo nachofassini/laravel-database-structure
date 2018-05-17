@@ -17,9 +17,9 @@
         }
     ],
     "require": {
-        "php": "^5.6|^7.0",
-        "illuminate/contracts": "~5.3|~5.4",
-        "illuminate/support": "~5.3|~5.4",
+        "php": "^7.1",
+        "illuminate/contracts": "~5.6",
+        "illuminate/support": "~5.6",
         "thedevsaddam/laravel-schema": "^2.0"
     },
     "autoload": {
